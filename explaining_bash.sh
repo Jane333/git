@@ -29,6 +29,8 @@ doing stuff for all files in directory
 
 pipes, I/O redirecting - examples
 
+man pages
+
 
 ********  REGULAR EXPRESSIONS  *********
 
