@@ -78,6 +78,9 @@ git log origin/branch2  # to view github log of the branch "branch2"
 # create new branch:
 git branch <new_branch_name>
 
+# push the locally created branch to github:
+git push origin HEAD
+
 # go to this new branch:
 git checkout <new_branch_name>
 

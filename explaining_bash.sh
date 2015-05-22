@@ -21,20 +21,32 @@ Starting linux tools from bash:
 	find
 	grep
 
+if grep -q "aa" datei
+	then echo "gefunden"
+else
+	echo "nicht gefunden"
+fi
+
+uc to upper case, cut
+
 Variables
 if-then-else
 reading files line by line
-doing stuff for all files in directory
+doing stuff for all files in directory:
+	for file in /tmp/testdir/*; do echo "$file ---"; done
+	for file in "/tmp/testdir/"*; do echo "$file ---"; done
 ((math))
 
 pipes, I/O redirecting - examples
 
+chmod, chown ?
 man pages
 
 
 ********  REGULAR EXPRESSIONS  *********
 
-.*+?{}
+.
+*+?{}
 [](|)
 ^$
 \1
