@@ -7,7 +7,7 @@
 
 
 *******  DOWNLOADING FILES  *******
-git clone https://github.com/Jane333/test1.git # creates a local copy of the remote github repository
+git clone https://github.com/Jane333/git.git # creates a local copy of the remote github repository
 # or:
 git init  # creates a new, empty repository in your current directory
 
