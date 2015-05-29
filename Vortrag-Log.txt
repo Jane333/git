@@ -1,0 +1,496 @@
+anja@kometes:/tmp/test$ man 7 print
+Kein Handbucheintrag für print im Abschnitt 7 vorhanden
+Siehe auch »man 7 undocumented« für Hilfe, wenn Handbuchseiten nicht verfügbar sind.
+anja@kometes:/tmp/test$ man 8 print
+Kein Handbucheintrag für print im Abschnitt 8 vorhanden
+Siehe auch »man 7 undocumented« für Hilfe, wenn Handbuchseiten nicht verfügbar sind.
+anja@kometes:/tmp/test$ man 9 print
+Kein Handbucheintrag für print im Abschnitt 9 vorhanden
+Siehe auch »man 7 undocumented« für Hilfe, wenn Handbuchseiten nicht verfügbar sind.
+
+anja@kometes:/tmp/test$ meinls=$(ls)
+anja@kometes:/tmp/test$ echo "$meinls"
+datei1
+datei2
+anja@kometes:/tmp/test$ ls
+datei1  datei2
+anja@kometes:/tmp/test$ echo $?
+0
+anja@kometes:/tmp/test$ rm datei3
+rm: das Entfernen von »datei3“ ist nicht möglich: Datei oder Verzeichnis nicht gefunden
+anja@kometes:/tmp/test$ echo $?
+1
+
+anja@kometes:/tmp/test$ ls -l
+insgesamt 0
+-rw-rw-r-- 1 anja anja 0 Mai 29 14:40 datei1
+-rw-rw-r-- 1 anja anja 0 Mai 29 14:44 datei2
+
+anja@kometes:/tmp/test$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+anja@kometes:/tmp/test$ if ((2 < 3)); then echo "ist kleiner"; fi
+ist kleiner
+anja@kometes:/tmp/test$ if ((2 < 3))
+> then
+>   echo 123
+> fi
+123
+
+anja@kometes:/tmp/test$ ls -l
+insgesamt 4
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:40 datei1
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:44 datei2
+-rw-rw-r-- 1 anja anja 53 Mai 29 15:11 meinSkript.sh
+anja@kometes:/tmp/test$ sudo chmod 777 meinSkript.sh 
+[sudo] password for anja: 
+anja@kometes:/tmp/test$ ls -l
+insgesamt 4
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:40 datei1
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:44 datei2
+-rwxrwxrwx 1 anja anja 53 Mai 29 15:11 meinSkript.sh
+anja@kometes:/tmp/test$ sudo ls
+datei1	datei2	meinSkript.sh
+anja@kometes:/tmp/test$ ./meinSkript.sh 
+ab
+cd
+
+anja@kometes:/tmp/test$ # Zahlen fuer die file permissions: read = 4, write = 2, execute = 1
+anja@kometes:/tmp/test$ man 7 print
+Kein Handbucheintrag für print im Abschnitt 7 vorhanden
+Siehe auch »man 7 undocumented« für Hilfe, wenn Handbuchseiten nicht verfügbar sind.
+anja@kometes:/tmp/test$ man 8 print
+Kein Handbucheintrag für print im Abschnitt 8 vorhanden
+Siehe auch »man 7 undocumented« für Hilfe, wenn Handbuchseiten nicht verfügbar sind.
+anja@kometes:/tmp/test$ man 9 print
+Kein Handbucheintrag für print im Abschnitt 9 vorhanden
+Siehe auch »man 7 undocumented« für Hilfe, wenn Handbuchseiten nicht verfügbar sind.
+
+anja@kometes:/tmp/test$ meinls=$(ls)
+anja@kometes:/tmp/test$ echo "$meinls"
+datei1
+datei2
+anja@kometes:/tmp/test$ ls
+datei1  datei2
+anja@kometes:/tmp/test$ echo $?
+0
+anja@kometes:/tmp/test$ rm datei3
+rm: das Entfernen von »datei3“ ist nicht möglich: Datei oder Verzeichnis nicht gefunden
+anja@kometes:/tmp/test$ echo $?
+1
+anja@kometes:/tmp/test$ ls -l
+insgesamt 0
+-rw-rw-r-- 1 anja anja 0 Mai 29 14:40 datei1
+-rw-rw-r-- 1 anja anja 0 Mai 29 14:44 datei2
+anja@kometes:/tmp/test$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+anja@kometes:/tmp/test$ if ((2 < 3)); then echo "ist kleiner"; fi
+ist kleiner
+anja@kometes:/tmp/test$ if ((2 < 3))
+> then
+>   echo 123
+> fi
+123
+anja@kometes:/tmp/test$ ls -l
+insgesamt 4
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:40 datei1
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:44 datei2
+-rw-rw-r-- 1 anja anja 53 Mai 29 15:11 meinSkript.sh
+anja@kometes:/tmp/test$ sudo chmod 777 meinSkript.sh 
+[sudo] password for anja: 
+anja@kometes:/tmp/test$ ls -l
+insgesamt 4
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:40 datei1
+-rw-rw-r-- 1 anja anja  0 Mai 29 14:44 datei2
+-rwxrwxrwx 1 anja anja 53 Mai 29 15:11 meinSkript.sh
+anja@kometes:/tmp/test$ sudo ls
+datei1	datei2	meinSkript.sh
+anja@kometes:/tmp/test$ ./meinSkript.sh 
+ab
+cd
+anja@kometes:/tmp/test$ # read = 4, write = 2, execute = 1
+
+anja@kometes:/tmp/test$ ls
+datei1  datei2  meinSkript.sh
+anja@kometes:/tmp/test$ echo "abc" > datei1
+anja@kometes:/tmp/test$ echo "eee" >> datei1
+anja@kometes:/tmp/test$ cat datei1
+abc
+eee
+anja@kometes:/tmp/test$ grep -E "([a-z])\1" datei1
+eee
+anja@kometes:/tmp/test$ sed -i "s/([a-z])/\1\1\1\1\1\1/" datei1
+sed: -e Ausdruck #1, Zeichen 23: Ungültiger Verweis \1 im rechten Teil (`RHS') des `s'-Befehls
+anja@kometes:/tmp/test$ sed -i "s/\([a-z]\)/\1\1\1\1\1\1/" datei1
+anja@kometes:/tmp/test$ cat datei1
+aaaaaabc
+eeeeeeee
+anja@kometes:/tmp/test$ sed -i "s/\([a-z]\)\1/\1\1\1\1\1\1/" datei1
+anja@kometes:/tmp/test$ cat datei1
+aaaaaaaaaabc
+eeeeeeeeeeee
+anja@kometes:/tmp/test$ sed -i "s/\([a-z]\1\)/\1\1\1\1\1\1/" datei1
+sed: -e Ausdruck #1, Zeichen 27: Ungültiger Verweis zurück
+anja@kometes:/tmp/test$ sed -i "s/\([a-z]\1\)/\1\1\1\1\1\1/g^Cdatei1
+anja@kometes:/tmp/test$ sed "s/$var$/Jana/^C
+
+anja@kometes:/tmp/test$ ls ../
+0035.pdf              PriorityQueue.java
+config-err-pBZVq6     qtsingleapp-homean-bfe2-3e8
+git                   qtsingleapp-homean-bfe2-3e8-lockfile
+hsperfdata_anja       qtsingleapp-TexMak-44c1-3e8-lockfile
+kde-anja              skype-2253
+ksocket-anja          sni-qt_skype_2253-dKhGQs
+oop 5. blatt          test
+orbit-anja            unity_support_test.0
+PriorityQueue-1.java
+anja@kometes:/tmp/test$ ls
+datei1  datei2  meinSkript.sh
+anja@kometes:/tmp/test$ rm datei*
+
+anja@kometes:/tmp/test$ git clone https://github.com/Jane333/git.git
+Nach »git« wird geklont
+remote: Counting objects: 210, done.
+remote: Compressing objects: 100% (119/119), done.
+remote: Total 210 (delta 59), reused 210 (delta 59), pack-reused 0
+Objekte werden empfangen: 100% (210/210), 1.78 MiB | 612.00 KiB/s, done.
+Unterschiede werden aufgelöst: 100% (59/59), done.
+Verbundenheit wird überprüft … Fertig.
+anja@kometes:/tmp/test$ ls
+git  meinSkript.sh
+anja@kometes:/tmp/test$ cd git
+anja@kometes:/tmp/test/git$ ls -a
+.   bash_und_du.odp  .git            git_und_du.pdf
+..  bash_und_du.pdf  git_und_du.odp  Hilfsdateien
+anja@kometes:/tmp/test/git$ echo "abc" > test
+anja@kometes:/tmp/test/git$ git add test
+anja@kometes:/tmp/test/git$ git commit -am "added test"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'anja@kometes.(none)')
+anja@kometes:/tmp/test/git$ git config --local user.email "jana.cavojska9@gmail.com"
+anja@kometes:/tmp/test/git$ git config --local user.name "Jane333"anja@kometes:/tmp/test/git$ git commit -am "added test"[master 06fde75] added test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test
+anja@kometes:/tmp/test/git$ git push
+warning: 'push.default' ist nicht gesetzt; der implizit gesetzte Wert
+wird in Git 2.0 von 'matching' nach 'simple' geändert. Um diese Meldung zu
+unterdrücken und das aktuelle Verhalten nach Änderung des Standardwertes
+beizubehalten, benutzen Sie:
+
+  git config --global push.default matching
+
+Um diese Meldung zu unterdrücken und das neue Verhalten jetzt zu übernehmen, benutzen Sie:
+
+  git config --global push.default simple
+
+Wenn 'push.default' auf den Wert 'matching' gesetzt ist, werden lokale
+Branches zu den Remote-Branches mit den selben Namen versendet.
+
+In Git 2.0 wird das Standardverhalten zu 'simple' geändert. Hierbei wird
+der aktuelle Branch zu dem entsprechenden Remote-Branch versendet, den
+'git pull' zur Aktualisierung des aktuellen Branches verwendet.
+
+Führen Sie 'git help config' aus und suchen Sie nach 'push.default' für
+weitere Informationen.
+(Der Modus 'simple' wurde in Git 1.7.11 eingeführt. Benutzen Sie den ähnlichen
+Modus 'current' anstatt 'simple', falls Sie gelegentlich ältere Versionen von
+Git benutzen.)
+
+Username for 'https://github.com': Jane333
+Password for 'https://Jane333@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 266 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/Jane333/git.git
+   c563e20..06fde75  master -> master
+anja@kometes:/tmp/test/git$ git commit -am "hab datei lokal geaendert." 
+[master 7818c17] hab datei lokal geaendert.
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+anja@kometes:/tmp/test/git$ git push
+warning: 'push.default' ist nicht gesetzt; der implizit gesetzte Wert
+wird in Git 2.0 von 'matching' nach 'simple' geändert. Um diese Meldung zu
+unterdrücken und das aktuelle Verhalten nach Änderung des Standardwertes
+beizubehalten, benutzen Sie:
+
+  git config --global push.default matching
+
+Um diese Meldung zu unterdrücken und das neue Verhalten jetzt zu übernehmen, benutzen Sie:
+
+  git config --global push.default simple
+
+Wenn 'push.default' auf den Wert 'matching' gesetzt ist, werden lokale
+Branches zu den Remote-Branches mit den selben Namen versendet.
+
+In Git 2.0 wird das Standardverhalten zu 'simple' geändert. Hierbei wird
+der aktuelle Branch zu dem entsprechenden Remote-Branch versendet, den
+'git pull' zur Aktualisierung des aktuellen Branches verwendet.
+
+Führen Sie 'git help config' aus und suchen Sie nach 'push.default' für
+weitere Informationen.
+(Der Modus 'simple' wurde in Git 1.7.11 eingeführt. Benutzen Sie den ähnlichen
+Modus 'current' anstatt 'simple', falls Sie gelegentlich ältere Versionen von
+Git benutzen.)
+
+Username for 'https://github.com': Jane333
+Password for 'https://Jane333@github.com': 
+To https://github.com/Jane333/git.git
+ ! [rejected]        master -> master (fetch first)
+error: Fehler beim Versenden einiger Referenzen nach 'https://github.com/Jane333/git.git'
+Hinweis: Aktualisierungen wurden zurückgewiesen, weil das Remote-Repository Commits enthält,
+Hinweis: die lokal nicht vorhanden sind. Das wird üblicherweise durch einen "push" von
+Hinweis: Commits auf dieselbe Referenz von einem anderen Repository aus verursacht.
+Hinweis: Vielleicht müssen Sie die externen Änderungen zusammenzuführen (z.B. 'git pull ...')
+Hinweis: bevor Sie erneut "push" ausführen.
+Hinweis: Siehe auch die Sektion 'Note about fast-forwards' in 'git push --help'
+Hinweis: für weitere Details.
+anja@kometes:/tmp/test/git$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Von https://github.com/Jane333/git
+   06fde75..8e01312  master     -> origin/master
+Automatisches Zusammenfügen von test
+KONFLIKT (Inhalt): Merge-Konflikt in test
+Automatischer Merge fehlgeschlagen; beheben Sie die Konflikte und committen Sie dann das Ergebnis.
+anja@kometes:/tmp/test/git$ git mergetool --tool=kdiff3
+Merging:
+test
+
+Normal merge conflict for 'test':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (kdiff3): 
+The merge tool kdiff3 is not available as 'kdiff3'
+anja@kometes:/tmp/test/git$ sudo apt-get install kdiff3
+[sudo] password for anja: 
+Paketlisten werden gelesen... Fertig
+Abhängigkeitsbaum wird aufgebaut.       
+Statusinformationen werden eingelesen.... Fertig
+Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
+  calligra-l10n-de gnustep-back-common gnustep-back0.22 gnustep-back0.22-art
+  gnustep-base-common gnustep-base-runtime gnustep-common gnustep-gpbs
+  gnustep-gui-common gnustep-gui-runtime kde-l10n-de libao-common libao4
+  libgnustep-base1.24 libgnustep-gui0.22 libobjc4 libpopplerkit0 mknfonts.tool
+Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
+Die folgenden zusätzlichen Pakete werden installiert:
+  kdiff3-doc
+Die folgenden NEUEN Pakete werden installiert:
+  kdiff3 kdiff3-doc
+0 aktualisiert, 2 neu installiert, 0 zu entfernen und 22 nicht aktualisiert.
+Es müssen 1.767 kB an Archiven heruntergeladen werden.
+Nach dieser Operation werden 5.251 kB Plattenplatz zusätzlich benutzt.
+Möchten Sie fortfahren? [J/n] J
+Holen: 1 http://de.archive.ubuntu.com/ubuntu/ trusty/universe kdiff3 amd64 0.9.97-3 [1.061 kB]
+Holen: 2 http://de.archive.ubuntu.com/ubuntu/ trusty/universe kdiff3-doc all 0.9.97-3 [706 kB]
+Es wurden 1.767 kB in 0 s geholt (2.029 kB/s).
+Vormals nicht ausgewähltes Paket kdiff3 wird gewählt.
+(Lese Datenbank ... 472567 Dateien und Verzeichnisse sind derzeit installiert.)
+Vorbereitung zum Entpacken von .../kdiff3_0.9.97-3_amd64.deb ...
+Entpacken von kdiff3 (0.9.97-3) ...
+Vormals nicht ausgewähltes Paket kdiff3-doc wird gewählt.
+Vorbereitung zum Entpacken von .../kdiff3-doc_0.9.97-3_all.deb ...
+Entpacken von kdiff3-doc (0.9.97-3) ...
+Trigger für mime-support (3.54ubuntu1.1) werden verarbeitet ...
+Trigger für gnome-menus (3.10.1-0ubuntu2) werden verarbeitet ...
+Trigger für desktop-file-utils (0.22-1ubuntu1) werden verarbeitet ...
+Trigger für bamfdaemon (0.5.1+14.04.20140409-0ubuntu1) werden verarbeitet ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Trigger für hicolor-icon-theme (0.13-1) werden verarbeitet ...
+Trigger für man-db (2.6.7.1-1ubuntu1) werden verarbeitet ...
+Trigger für doc-base (0.10.5) werden verarbeitet ...
+1 hinzugefügte Doc-base-Datei wird verarbeitet...
+Dokumente werden mit scrollkeeper registriert ...
+kdiff3 (0.9.97-3) wird eingerichtet ...
+kdiff3-doc (0.9.97-3) wird eingerichtet ...
+anja@kometes:/tmp/test/git$ git mergetool --tool=kdiff3
+Merging:
+test
+
+Normal merge conflict for 'test':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (kdiff3): 
+anja@kometes:/tmp/test/git$ git commit -am "Konflikt aufgeloest, yeah!!!"
+git commit -am "Konflikt aufgeloest, yeahgit mergetool --tool=kdiff3!"
+[master 96bd97d] Konflikt aufgeloest, yeahgit mergetool --tool=kdiff3!
+anja@kometes:/tmp/test/git$ git push
+warning: 'push.default' ist nicht gesetzt; der implizit gesetzte Wert
+wird in Git 2.0 von 'matching' nach 'simple' geändert. Um diese Meldung zu
+unterdrücken und das aktuelle Verhalten nach Änderung des Standardwertes
+beizubehalten, benutzen Sie:
+
+  git config --global push.default matching
+
+Um diese Meldung zu unterdrücken und das neue Verhalten jetzt zu übernehmen, benutzen Sie:
+
+  git config --global push.default simple
+
+Wenn 'push.default' auf den Wert 'matching' gesetzt ist, werden lokale
+Branches zu den Remote-Branches mit den selben Namen versendet.
+
+In Git 2.0 wird das Standardverhalten zu 'simple' geändert. Hierbei wird
+der aktuelle Branch zu dem entsprechenden Remote-Branch versendet, den
+'git pull' zur Aktualisierung des aktuellen Branches verwendet.
+
+Führen Sie 'git help config' aus und suchen Sie nach 'push.default' für
+weitere Informationen.
+(Der Modus 'simple' wurde in Git 1.7.11 eingeführt. Benutzen Sie den ähnlichen
+Modus 'current' anstatt 'simple', falls Sie gelegentlich ältere Versionen von
+Git benutzen.)
+
+Username for 'https://github.com': Jane333
+Password for 'https://Jane333@github.com': 
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 505 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To https://github.com/Jane333/git.git
+   8e01312..96bd97d  master -> master
+anja@kometes:/tmp/test/git$ git log
+commit 96bd97d4eed48a3e57e44603961fcb1d787398da
+Merge: 7818c17 8e01312
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:15:32 2015 +0200
+
+    Konflikt aufgeloest, yeahgit mergetool --tool=kdiff3!
+
+commit 7818c17a3b50b246fdae50e90c3bdb7e861ee47d
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:05:42 2015 +0200
+
+    hab datei lokal geaendert.
+
+commit 8e01312d27050a6ba4d6d0c2a892fa9bc2fa8a38
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:04:09 2015 +0200
+
+    hab auf github die datei test modifiziert
+
+commit 06fde758d0e547d2bc3d2cf3408eea493cca4eea
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:01:36 2015 +0200
+
+    added test
+
+commit c563e2047749cbbfc71c3c5fc167cd350e6eee49
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 12:48:37 2015 +0200
+
+    minor changes
+
+anja@kometes:/tmp/test/git$ git checkout 7818c17a3b50b246fdae50e90c3bdb7e861ee47d
+Note: checking out '7818c17a3b50b246fdae50e90c3bdb7e861ee47d'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD ist jetzt bei 7818c17... hab datei lokal geaendert.
+anja@kometes:/tmp/test/git$ git status
+HEAD losgelöst bei 7818c17
+Unbeobachtete Dateien:
+  (benutzen Sie "git add <Datei>...", um die Änderungen zum Commit vorzumerken)
+
+	test.BACKUP.6504
+	test.BASE.6504
+	test.LOCAL.6504
+	test.REMOTE.6504
+	test.orig
+
+nichts zum Commit vorgemerkt, aber es gibt unbeobachtete Dateien (benutzen Sie "git add" zum Beobachten)
+anja@kometes:/tmp/test/git$ git checkout master
+Vorherige Position von HEAD war 7818c17... hab datei lokal geaendert.
+Zu Zweig »master« gewechselt
+Ihr Branch ist auf dem selben Stand wie 'origin/master'.
+anja@kometes:/tmp/test/git$ git log
+commit 96bd97d4eed48a3e57e44603961fcb1d787398da
+Merge: 7818c17 8e01312
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:15:32 2015 +0200
+
+    Konflikt aufgeloest, yeahgit mergetool --tool=kdiff3!
+
+commit 7818c17a3b50b246fdae50e90c3bdb7e861ee47d
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:05:42 2015 +0200
+
+    hab datei lokal geaendert.
+
+commit 8e01312d27050a6ba4d6d0c2a892fa9bc2fa8a38
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:04:09 2015 +0200
+
+    hab auf github die datei test modifiziert
+
+commit 06fde758d0e547d2bc3d2cf3408eea493cca4eea
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 17:01:36 2015 +0200
+
+    added test
+
+commit c563e2047749cbbfc71c3c5fc167cd350e6eee49
+Author: Jane333 <jana.cavojska9@gmail.com>
+Date:   Fri May 29 12:48:37 2015 +0200
+
+    minor changes
+
+anja@kometes:/tmp/test/git$ gitk
+Die Anwendung »gitk« ist momentan nicht installiert. Sie können sie durch folgende Eingabe installieren:
+sudo apt-get install gitk
+anja@kometes:/tmp/test/git$ sudo apt-get install gitk
+[sudo] password for anja: 
+Das hat nicht funktioniert, bitte nochmal probieren.
+[sudo] password for anja: 
+Paketlisten werden gelesen... Fertig
+Abhängigkeitsbaum wird aufgebaut.       
+Statusinformationen werden eingelesen.... Fertig
+Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
+  calligra-l10n-de gnustep-back-common gnustep-back0.22 gnustep-back0.22-art
+  gnustep-base-common gnustep-base-runtime gnustep-common gnustep-gpbs
+  gnustep-gui-common gnustep-gui-runtime kde-l10n-de libao-common libao4
+  libgnustep-base1.24 libgnustep-gui0.22 libobjc4 libpopplerkit0 mknfonts.tool
+Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
+Vorgeschlagene Pakete:
+  git-doc
+Die folgenden NEUEN Pakete werden installiert:
+  gitk
+0 aktualisiert, 1 neu installiert, 0 zu entfernen und 22 nicht aktualisiert.
+Es müssen 121 kB an Archiven heruntergeladen werden.
+Nach dieser Operation werden 1.250 kB Plattenplatz zusätzlich benutzt.
+Holen: 1 http://de.archive.ubuntu.com/ubuntu/ trusty-updates/main gitk all 1:1.9.1-1ubuntu0.1 [121 kB]
+Es wurden 121 kB in 0 s geholt (783 kB/s).
+Vormals nicht ausgewähltes Paket gitk wird gewählt.
+(Lese Datenbank ... 472802 Dateien und Verzeichnisse sind derzeit installiert.)
+Vorbereitung zum Entpacken von .../gitk_1%3a1.9.1-1ubuntu0.1_all.deb ...
+Entpacken von gitk (1:1.9.1-1ubuntu0.1) ...
+Trigger für man-db (2.6.7.1-1ubuntu1) werden verarbeitet ...
+gitk (1:1.9.1-1ubuntu0.1) wird eingerichtet ...
+anja@kometes:/tmp/test/git$ gitk
+anja@kometes:/tmp/test/git$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+anja@kometes:/tmp/test/git$ git remote -v
+origin	https://github.com/Jane333/git.git (fetch)
+origin	https://github.com/Jane333/git.git (push)
+anja@kometes:/tmp/test/git$ 
