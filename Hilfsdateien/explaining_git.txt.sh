@@ -88,7 +88,10 @@ git checkout <new_branch_name>
 git checkout master
 
 # list all existing branches:
-git branch
+git branch -a
+
+# Den remote Branch branch2, der lokal nicht existiert, von Github holen:
+git checkout -b origin/branch2
 
 # Delete the specified branch. This is a “safe” operation in that Git prevents you from deleting the branch if it has unmerged changes.
 git branch -d <branch>
